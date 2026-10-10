@@ -40,3 +40,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Work is tracked in the backlog; issue te
 ## Licence
 
 MIT for original files in this package. See [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md). Upstream licences must be checked separately before importing upstream code.
+
+## Browser reviewer demo
+
+[Open the public prototype](https://spartan-stellar-p2p.greengecko4.chatgpt.site). Try the wallet-free guided trade, or use Freighter with three testnet accounts for real escrow transactions. [Setup and deployment guide](web/README.md). Uses synthetic DEMOUSD; no real USDC or naira. Live JavaScript client release and refund evidence is in [browser-testnet-evidence.json](docs/browser-testnet-evidence.json).
