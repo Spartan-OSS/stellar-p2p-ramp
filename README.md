@@ -6,7 +6,7 @@ Open-source infrastructure for exchanging Stellar USDC for local currency, start
 
 ## Current status
 
-Pre-alpha design and executable Python domain reference. No live escrow, wallet integration, bank integration, KYC service or deployed marketplace. The reference model does not move money and does not authenticate wallet signatures. Do not use it to handle funds.
+Pre-alpha: an original Soroban escrow contract, executable Python domain reference and signed CLI testnet walkthrough. Browser wallet integration, bank integration, KYC and the marketplace are still pending. The demo uses disposable accounts and a synthetic token, not redeemable USDC. No mainnet use.
 
 ## Run the foundation
 
@@ -27,9 +27,11 @@ python3 -m stellar_p2p.demo
 
 Read [architecture](docs/ARCHITECTURE.md), [escrow specification](docs/ESCROW_SPEC.md), [research](docs/RESEARCH.md), [roadmap](docs/ROADMAP.md), [application draft](docs/APPLICATION.md) and [contributor backlog](docs/BACKLOG.md).
 
+The [escrow decision](docs/ESCROW_DECISION.md) explains why this prototype uses an original per-trade contract. Follow the [signed testnet walkthrough](docs/TESTNET_WALKTHROUGH.md) to compile, test and exercise it.
+
 ## Implementation direction
 
-Next.js/TypeScript UI, FastAPI API, PostgreSQL, a Stellar event worker, and a Rust/Soroban escrow implementation behind an adapter. Evaluate Trustless Work integration against our state-machine requirements before choosing it over an original contract. NGN remains off-chain. No platform token, bridges or automated receipt-based release in the initial scope.
+Next.js/TypeScript UI, FastAPI API, PostgreSQL, a Stellar event worker, and the original Rust/Soroban escrow implementation. The inspected Trustless Work contract did not meet our fixed-recipient/deadline invariants. NGN remains off-chain. No platform token, bridges or automated receipt-based release in the initial scope.
 
 ## Contributing
 

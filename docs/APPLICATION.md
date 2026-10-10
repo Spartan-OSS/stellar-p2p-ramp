@@ -16,11 +16,11 @@ Stellar is the settlement layer: the proposed escrow uses Soroban and Stellar US
 
 ## Existing foundation — accurate as of 10 October 2026
 
-We have an original Python domain model and nine passing tests covering participant permissions, deadline boundaries, dispute protection and terminal states; repository contribution templates; an architecture/specification; a pinned comparison of MicoPay, Pacto, Trustless Work and MarketX; and scoped contributor tasks.
+We have an original Python domain model with nine passing tests, an original Soroban escrow with ten passing contract tests, a signed CLI testnet walkthrough, repository contribution templates, an architecture/specification, a pinned comparison of MicoPay, Pacto, Trustless Work and MarketX, and scoped contributor tasks. The testnet script uses a synthetic token and disposable signing accounts; browser-wallet integration is still pending.
 
 Public repository: https://github.com/Spartan-OSS/stellar-p2p-ramp
 
-We do not yet have a deployed Soroban contract, wallet-connected demo, payment integration, customers or regulatory approval. Replace this paragraph as implementation advances. Do not describe a reference model as a functioning exchange.
+We do not yet have a browser-wallet marketplace demo, payment integration, customers or regulatory approval. See the testnet walkthrough and its evidence file for the escrow demonstration. Do not describe this prototype as a functioning exchange.
 
 ## Requested contributor work
 
