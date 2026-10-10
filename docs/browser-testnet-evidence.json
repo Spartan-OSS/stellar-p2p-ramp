@@ -1,0 +1,37 @@
+{
+  "network": "testnet",
+  "asset": "seller-issued synthetic DEMOUSD, not USDC",
+  "client": "web/src/client.js",
+  "results": [
+    {
+      "contract": "CDKY3PM6RLHI7B434AKGIVTASGBN22NRPQUWJ7GTDNMCP52SIM7CB75K",
+      "state": "Released",
+      "transactions": [
+        "41f36226bbf763bde58a83b21ae25ad2eaeb2e6c610b9277d9e0ed34f98cc8bb",
+        "65bb3d165a1e5b742f8e26e8c20d746d7f23f361444e452d8e585a2ee94e9fb8",
+        "46c2b8141af5b8dbc22e7f38f29eefeb26a8a67c0fbe1e103a7691a99f77bc0e",
+        "2fd189bc05b874e329954d09152e74f1ef2bda867804ac67e906ecc4c3d77e73",
+        "afcca595f6c6d0a235bc38a9fb50ff8e4ca43cf9fb65a589a47cf41c03d0dec6",
+        "311a99667a8aafab1be96bc75244fca82ac219086e003897981387db5d16053a"
+      ]
+    },
+    {
+      "contract": "CDBISBN3SZOZFKYTOUER2IFVRFE2R3W5U24M2FXGFWNB33J5NJWXZBXC",
+      "state": "Refunded",
+      "transactions": [
+        "41f36226bbf763bde58a83b21ae25ad2eaeb2e6c610b9277d9e0ed34f98cc8bb",
+        "65bb3d165a1e5b742f8e26e8c20d746d7f23f361444e452d8e585a2ee94e9fb8",
+        "46c2b8141af5b8dbc22e7f38f29eefeb26a8a67c0fbe1e103a7691a99f77bc0e",
+        "2fd189bc05b874e329954d09152e74f1ef2bda867804ac67e906ecc4c3d77e73",
+        "afcca595f6c6d0a235bc38a9fb50ff8e4ca43cf9fb65a589a47cf41c03d0dec6",
+        "311a99667a8aafab1be96bc75244fca82ac219086e003897981387db5d16053a",
+        "dc9e8b049f95b54813341574196393fc13fe5c225620cf754999c789dda66449",
+        "1dfb39e0e68915953379b9ce032e186164ed523eb57c784a8733fb87299dcb3e",
+        "09aa31c953b366bb22b638c4708a0cd64ebfb669d833567cb0bdec9b364f29cf",
+        "c08c1f1e5adab276711a6b2651374a6497fa45d8b223f7135d684b68a64c29d3",
+        "227f7264d89ee269d61f55a39b7696a1a01987f92aa52982abdbd5a82c854e0b"
+      ]
+    }
+  ],
+  "validation": "Same browser client, disposable in-memory Keypair signer. Freighter popup and visual browser QA not exercised."
+}

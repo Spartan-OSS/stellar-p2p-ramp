@@ -1,6 +1,6 @@
 # Security
 
-This package has no deployed contracts and handles no funds. The domain reference models permissions using strings; it does not verify signatures.
+This pre-alpha package includes a Soroban escrow and a disposable-account testnet script. It must not handle real funds. The Python domain reference models permissions using strings; it does not verify signatures. The Soroban contract enforces participant authorisation on-chain.
 
 Before public launch, configure private GitHub vulnerability reporting or publish a monitored security contact. Report potential fund-loss or identity-data issues privately through that channel. Do not include real credentials or identity documents in public issues.
 

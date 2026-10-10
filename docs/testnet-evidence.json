@@ -1,0 +1,129 @@
+{
+  "network": "testnet",
+  "asset": "DEMOUSD \u2014 synthetic, not Circle USDC",
+  "wasm_sha256": "7ca3481dd5b256c09011679c7089ccc4bbe5b4ef4b00abecf7a7f8811174b4df",
+  "accounts": {
+    "issuer": "GBA4NSVY25BW7VBYSFDDW4ROK57AKFTXIU2AENP4II7VEYPVDQ5QWYDW",
+    "seller": "GCVPBAPAWAOJAPU3RRXPBTPVJ6ZE7H4EPUR27WTUDJQ5OKOHDZJGJBGY",
+    "buyer": "GDXEND4WJG6XF5RKLMZFKCSRNYWUIVDVZSBLJIXX5MMN4HKYK5KBVLGJ",
+    "resolver": "GABVG352JAAT24GZ7ALLEVCY6YVGKZ45QT4KNTC4OFOFYRMYMNNJNI5L"
+  },
+  "token_contract": "CBSMIQ7UXTIZF4QGOKWFUUKP3PEERJ5NY7GLOXECRKQE4C6VWYG6V7TW",
+  "escrows": {
+    "released": "CBNROV4NSVCRG6S3RSB3NFWHRL2UKOWCFJS26372QAOM2LXIUKC6ACHW",
+    "refunded": "CCIIAZS6ZQ352VOVODBIGL54DGL5VQUKQTMJAN4DIWIUJEHTODU3GHE6"
+  },
+  "balances_base_units": {
+    "seller": 1000000000,
+    "buyer": 1000000000,
+    "resolver": 0
+  },
+  "transactions": [
+    {
+      "step": "seller trustline",
+      "signer": "seller",
+      "hash": "c90e1b7c43a40019eeab8d99d17173c42576055c6366f687e0c23a6ad17d9404",
+      "ledger": 5120616,
+      "url": "https://stellar.expert/explorer/testnet/tx/c90e1b7c43a40019eeab8d99d17173c42576055c6366f687e0c23a6ad17d9404"
+    },
+    {
+      "step": "buyer trustline",
+      "signer": "buyer",
+      "hash": "f7e8cdde9a14beafc444998a64d17effd84f3e8ce11cc3843623efdb325232e9",
+      "ledger": 5120617,
+      "url": "https://stellar.expert/explorer/testnet/tx/f7e8cdde9a14beafc444998a64d17effd84f3e8ce11cc3843623efdb325232e9"
+    },
+    {
+      "step": "resolver trustline",
+      "signer": "resolver",
+      "hash": "98863cb2dc22fb6ed9a596a37a7c274002aab4f40d08cb2d62ba5f2171fffe14",
+      "ledger": 5120618,
+      "url": "https://stellar.expert/explorer/testnet/tx/98863cb2dc22fb6ed9a596a37a7c274002aab4f40d08cb2d62ba5f2171fffe14"
+    },
+    {
+      "step": "issue 200 DEMOUSD",
+      "signer": "issuer",
+      "hash": "20c823c3c4da2e6e3b937d9e942867bd135e8d2e8b511b6cb02c7fce7d86f5d4",
+      "ledger": 5120619,
+      "url": "https://stellar.expert/explorer/testnet/tx/20c823c3c4da2e6e3b937d9e942867bd135e8d2e8b511b6cb02c7fce7d86f5d4"
+    },
+    {
+      "step": "deploy demo asset",
+      "signer": "issuer",
+      "hash": "f21e43ae0501f2ebe7cb78edc3c6a1f5232f71aa1f755a29f811e370c46af03b",
+      "ledger": 5120620,
+      "url": "https://stellar.expert/explorer/testnet/tx/f21e43ae0501f2ebe7cb78edc3c6a1f5232f71aa1f755a29f811e370c46af03b"
+    },
+    {
+      "step": "upload escrow wasm",
+      "signer": "seller",
+      "hash": "95ab40a8dad1f95759784005883c67e0e7920ffc3b634621a0524720bdd328c3",
+      "ledger": 5120621,
+      "url": "https://stellar.expert/explorer/testnet/tx/95ab40a8dad1f95759784005883c67e0e7920ffc3b634621a0524720bdd328c3"
+    },
+    {
+      "step": "deploy release escrow",
+      "signer": "seller",
+      "hash": "cb7b5dde6cebe091b367750511deaefb7bf60a8f91e844b22b837b8218a780d8",
+      "ledger": 5120623,
+      "url": "https://stellar.expert/explorer/testnet/tx/cb7b5dde6cebe091b367750511deaefb7bf60a8f91e844b22b837b8218a780d8"
+    },
+    {
+      "step": "fund",
+      "signer": "seller",
+      "hash": "7488d2a53640acb46fa0255565c3b7916cbc1f10475e2bee09d996885b03b796",
+      "ledger": 5120624,
+      "url": "https://stellar.expert/explorer/testnet/tx/7488d2a53640acb46fa0255565c3b7916cbc1f10475e2bee09d996885b03b796"
+    },
+    {
+      "step": "claim_payment",
+      "signer": "buyer",
+      "hash": "276b37b1e07866b7b22b2f315669734456176d0f8c63f8b5e34e1de510180cce",
+      "ledger": 5120625,
+      "url": "https://stellar.expert/explorer/testnet/tx/276b37b1e07866b7b22b2f315669734456176d0f8c63f8b5e34e1de510180cce"
+    },
+    {
+      "step": "confirm_receipt",
+      "signer": "seller",
+      "hash": "5948e63ccae556d32e0dfa7f3c27f3b49178a8d774d3b2c7273ffe511785dea2",
+      "ledger": 5120626,
+      "url": "https://stellar.expert/explorer/testnet/tx/5948e63ccae556d32e0dfa7f3c27f3b49178a8d774d3b2c7273ffe511785dea2"
+    },
+    {
+      "step": "deploy dispute escrow",
+      "signer": "seller",
+      "hash": "5da9766539aea1ad8542a801e74dd9032924672da2ccfce3f0924f838f032c83",
+      "ledger": 5120628,
+      "url": "https://stellar.expert/explorer/testnet/tx/5da9766539aea1ad8542a801e74dd9032924672da2ccfce3f0924f838f032c83"
+    },
+    {
+      "step": "fund",
+      "signer": "seller",
+      "hash": "124c61f51171411a6ceb70baa98f7a291e7f0669a72d91b94a43f33867ee7979",
+      "ledger": 5120629,
+      "url": "https://stellar.expert/explorer/testnet/tx/124c61f51171411a6ceb70baa98f7a291e7f0669a72d91b94a43f33867ee7979"
+    },
+    {
+      "step": "claim_payment",
+      "signer": "buyer",
+      "hash": "a08b08452603dabd46c57795c12550004adc7683d70393b2c79340e6527ba58a",
+      "ledger": 5120630,
+      "url": "https://stellar.expert/explorer/testnet/tx/a08b08452603dabd46c57795c12550004adc7683d70393b2c79340e6527ba58a"
+    },
+    {
+      "step": "open_dispute",
+      "signer": "buyer",
+      "hash": "e624ffd3e21ddd152032c15aeffe0d49f446cd7f64ba892cf8cb34057182c095",
+      "ledger": 5120631,
+      "url": "https://stellar.expert/explorer/testnet/tx/e624ffd3e21ddd152032c15aeffe0d49f446cd7f64ba892cf8cb34057182c095"
+    },
+    {
+      "step": "resolve",
+      "signer": "resolver",
+      "hash": "da034375b358610eedf98f955872adb0a5b9f5b335bca4374f2d9ded9f78c5d3",
+      "ledger": 5120632,
+      "url": "https://stellar.expert/explorer/testnet/tx/da034375b358610eedf98f955872adb0a5b9f5b335bca4374f2d9ded9f78c5d3"
+    }
+  ],
+  "limitations": "CLI-held disposable keys; no browser wallet, real bank payment or real USDC"
+}

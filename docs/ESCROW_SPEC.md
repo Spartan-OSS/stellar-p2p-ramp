@@ -1,6 +1,6 @@
 # Escrow specification v0.1
 
-Design target for implementation; the supplied Python model is only an executable reference. No deployed contract yet.
+Specification for the prototype. The Python model is an executable reference; `contracts/escrow` implements an original per-trade Soroban contract. See TESTNET_WALKTHROUGH and ESCROW_DECISION for exact scope.
 
 ## Roles and immutable terms
 
@@ -24,6 +24,8 @@ Funded means on-chain funding confirmed. Off-chain reservation cancellation befo
 ## Functions to implement
 
 `create_and_fund(terms)`; `claim_payment(trade_id, evidence_commitment)`; `confirm_receipt(trade_id)`; `expire(trade_id)`; `open_dispute(trade_id)`; `resolve(trade_id, buyer_wins, decision_commitment)`; `get_trade(trade_id)`; `bump_ttl(trade_id)`.
+
+Prototype mapping: deployment constructor receives Terms, then seller calls `fund`. Each contract address identifies one trade, so other methods omit trade IDs. `claim_payment`, `confirm_receipt`, `expire`, `open_dispute(actor)` and `resolve(buyer_wins)` implement the transitions; `get_terms`, `get_state` and `bump_ttl` expose inspection/maintenance. Evidence and decision commitments are deferred; no raw evidence is placed on-chain. Zero fees apply. Cross-contract reference uniqueness is enforced by the future application, not this contract.
 
 Use the ledger timestamp for contractual deadlines, not an assumed fixed number of ledgers per minute. Deadline must be future and bounded by policy. Define USDC asset identity per network; a test token is never represented as redeemable mainnet USDC. Buyer classic account trustline readiness and contract/account recipient support must be checked before funding.
 
