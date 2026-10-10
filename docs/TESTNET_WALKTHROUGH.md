@@ -29,3 +29,7 @@ Public transaction hashes, contract addresses and balances are written to `docs/
 ## Remaining work
 
 Freighter browser signing, wallet session authentication, configured native USDC issuer/contract validation, API integration, evidence storage and bank-transfer operations. This testnet demonstration is a milestone towards these features.
+
+## Verified run
+
+The committed [public evidence](testnet-evidence.json) records a successful signed testnet run: release and disputed refund both confirmed, buyer and seller final balances each 100 DEMOUSD, resolver balance zero and escrow principal fully paid out. Ten local Soroban tests and nine Python domain tests pass. The Wasm release build succeeds; the SDK emits a deprecation warning for the legacy event publishing API.
