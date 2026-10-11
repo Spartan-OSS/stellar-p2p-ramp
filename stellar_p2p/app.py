@@ -8,8 +8,10 @@ from typing import AsyncIterator, Optional
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from stellar_p2p.api.auth import router as auth_router
 from stellar_p2p.api.health import router as health_router
 from stellar_p2p.api.trades import router as trades_router
+from stellar_p2p.auth import NonceStore
 from stellar_p2p.config import Settings, get_settings
 from stellar_p2p.errors import register_error_handlers
 
@@ -46,8 +48,9 @@ def create_app(settings: Optional[Settings] = None) -> FastAPI:
         lifespan=lifespan,
     )
 
-    # Bind active configuration to application state
+    # Bind active configuration and isolated nonce store to application state
     app.state.settings = settings
+    app.state.nonce_store = NonceStore()
 
     # Wire CORS middleware
     cors_origins = settings.cors_origins if settings else ["http://localhost:3000"]
@@ -64,6 +67,7 @@ def create_app(settings: Optional[Settings] = None) -> FastAPI:
 
     # Register routers
     app.include_router(health_router)
+    app.include_router(auth_router)
     app.include_router(trades_router)
 
     return app

@@ -29,6 +29,19 @@ uvicorn stellar_p2p.app:get_app --factory --reload
 
 Interactive OpenAPI documentation is available at `http://127.0.0.1:8000/docs` and schema at `/openapi.json`.
 
+### Wallet Authentication (SEP-0010 Challenge-Response)
+
+1. **Request a signed challenge**:
+   `POST /auth/challenge` with `{"account": "G..."}`.
+   Returns domain- and network-bound challenge message with a single-use nonce.
+2. **Sign locally**:
+   Sign the canonical challenge message with wallet Ed25519 private key (e.g. Freighter wallet).
+3. **Verify and receive session token**:
+   `POST /auth/verify` with `{"account": "G...", "nonce": "...", "signature": "<hex_or_base64>"}`.
+   Nonces are consumed immediately upon verification to prevent replay attacks. Returns an HMAC-SHA256 signed Bearer session token.
+4. **Access protected endpoints**:
+   Pass header `Authorization: Bearer <access_token>`. All domain actor identities are derived strictly from the verified session.
+
 
 ## Product scope
 

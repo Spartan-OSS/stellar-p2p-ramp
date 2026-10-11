@@ -209,6 +209,9 @@ class TestStructuredErrorsAndActors(unittest.TestCase):
         self.assertIn("/health/live", data["paths"])
         self.assertIn("/health/ready", data["paths"])
         self.assertIn("/trades/{trade_id}", data["paths"])
+        self.assertIn("/auth/challenge", data["paths"])
+        self.assertIn("/auth/verify", data["paths"])
+        self.assertIn("/auth/me", data["paths"])
 
 
 if __name__ == "__main__":

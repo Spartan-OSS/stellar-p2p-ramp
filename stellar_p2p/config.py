@@ -66,6 +66,21 @@ class Settings(BaseSettings):
         description="Port for the API server",
     )
 
+    auth_domain: str = Field(
+        default="stellar-p2p.internal",
+        description="Domain for challenge verification (prevents cross-domain replay attacks)",
+    )
+
+    challenge_ttl_seconds: int = Field(
+        default=300,
+        description="TTL for authentication challenges in seconds (default 5 minutes)",
+    )
+
+    session_ttl_seconds: int = Field(
+        default=86400,
+        description="TTL for session bearer tokens in seconds (default 24 hours)",
+    )
+
     cors_origins: list[str] = Field(
         default_factory=lambda: ["http://localhost:3000"],
         description="Allowed CORS origins for the frontend client",
@@ -88,6 +103,9 @@ class Settings(BaseSettings):
             "stellar_rpc_url": self.stellar_rpc_url,
             "api_host": self.api_host,
             "api_port": self.api_port,
+            "auth_domain": self.auth_domain,
+            "challenge_ttl_seconds": self.challenge_ttl_seconds,
+            "session_ttl_seconds": self.session_ttl_seconds,
             "database_url_configured": bool(self.database_url),
             "session_secret_configured": bool(self.session_secret_key),
         }

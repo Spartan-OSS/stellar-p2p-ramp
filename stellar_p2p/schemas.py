@@ -103,3 +103,63 @@ class QuoteResponse(BaseModel):
     usdc_units: int = Field(..., description="Exact USDC base units to trade")
     ngn_kobo: int = Field(..., description="Calculated NGN kobo amount")
     expiry_timestamp: int = Field(..., description="Quote expiration deadline (Unix epoch)")
+
+
+# ---------------------------------------------------------------------------
+# Wallet Authentication Schemas (SEP-0010 / Web3 Challenge-Response)
+# ---------------------------------------------------------------------------
+
+
+class ChallengeRequest(BaseModel):
+    """Request payload for issuing a signed challenge."""
+
+    account: str = Field(
+        ...,
+        description="Stellar public address (G...) of the authenticating wallet",
+        examples=["GCR775TP7U5DMHSKDUOBGZEEZS6JFLAX7GXMKMH2JMUJDC4QRKVHLS35"],
+    )
+
+
+class ChallengeResponse(BaseModel):
+    """Domain and network-bound authentication challenge payload."""
+
+    account: str = Field(..., description="Target wallet address")
+    nonce: str = Field(..., description="Cryptographically random single-use nonce")
+    domain: str = Field(..., description="Domain boundary for challenge validation")
+    network_passphrase: str = Field(..., description="Stellar network passphrase boundary")
+    challenge_message: str = Field(..., description="Canonical challenge text to sign with Ed25519 key")
+    issued_at: int = Field(..., description="Challenge creation timestamp (Unix epoch)")
+    expires_at: int = Field(..., description="Challenge expiration timestamp (Unix epoch)")
+
+
+class VerifyChallengeRequest(BaseModel):
+    """Payload for submitting signed challenge for verification."""
+
+    account: str = Field(..., description="Stellar public address of the authenticating wallet")
+    nonce: str = Field(..., description="Single-use challenge nonce being consumed")
+    signature: str = Field(
+        ...,
+        description="Ed25519 signature over canonical challenge text (hex or base64)",
+    )
+    domain: Optional[str] = Field(
+        default=None,
+        description="Optional client domain assertion to verify against server domain",
+    )
+
+
+class AuthTokenResponse(BaseModel):
+    """Bearer session credentials issued upon successful signature verification."""
+
+    access_token: str = Field(..., description="HMAC-SHA256 signed bearer session token")
+    token_type: str = Field(default="Bearer", description="OAuth2 token type")
+    expires_in: int = Field(..., description="Session validity period in seconds")
+    account: str = Field(..., description="Authenticated Stellar wallet address")
+
+
+class ActorInfoResponse(BaseModel):
+    """Identity and session profile for the authenticated actor."""
+
+    account: str = Field(..., description="Verified Stellar public address")
+    authenticated: bool = Field(default=True, description="Authentication confirmation status")
+    network: str = Field(..., description="Stellar network environment")
+
